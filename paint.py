@@ -1,12 +1,11 @@
-"""Paint, for drawing shapes.
+"""
+Juego: Paint
 
-Exercises
+Programador 1: Iván Santiago Hernández Mendoza - A01662556
+Programador 2: Diego Jacobo - 
 
-1. Add a color.
-2. Complete circle.
-3. Complete rectangle.
-4. Complete triangle.
-5. Add width parameter.
+Fecha 09 / 05 / 2022
+
 """
 
 from turtle import *
@@ -38,7 +37,15 @@ def square(start, end):
 
 def circle(start, end):
     """Draw circle from start to end."""
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    for count in range(36):
+        forward(end.x - start.x)
+        left(10)
+
+    end_fill()
 
 
 def rectangle(start, end):
@@ -74,11 +81,14 @@ setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
 onkey(undo, 'u')
+# Implementación de los distintos colores y formas
+
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
+onkey(lambda: color('purple'), 'P')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
