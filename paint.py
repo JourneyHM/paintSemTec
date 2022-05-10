@@ -14,7 +14,6 @@ from freegames import vector
 
 
 def line(start, end):
-    """Draw line from start to end."""
     up()
     goto(start.x, start.y)
     down()
@@ -22,7 +21,6 @@ def line(start, end):
 
 
 def square(start, end):
-    """Draw square from start to end."""
     up()
     goto(start.x, start.y)
     down()
@@ -36,7 +34,6 @@ def square(start, end):
 
 
 def circle(start, end):
-    """Draw circle from start to end."""
     up()
     goto(start.x, start.y)
     down()
@@ -49,31 +46,29 @@ def circle(start, end):
 
 
 def rectangle(start, end):
-    """Draw rectangle from start to end."""
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
 
-    for count in range(2):
-        forward(end.x/2 - start.x/2)
+    for count in range(2):              # Se modifico el ciclo para que ahora solo se repita dos veces
+        forward(end.x/2 - start.x/2)    # Pero ahora cuando gira en esta linea lo hace a la mitad de la distancia
         left(90)
-        forward(end.x - start.x)
+        forward(end.x - start.x)        # Aqui mantiene la distancia y por eso se convierte en un rectangulo
         left(90)
 
     end_fill()
 
 
 def triangle(start, end):
-    """Draw triangle from start to end."""
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
 
-    for count in range(3):
-        forward(end.x - start.x)
-        left(120)
+    for count in range(3):          # Se modifico el ciclo para que se repita 3 veces
+        forward(end.x - start.x)    # Se mantiene la longitud del trazo
+        left(120)                   # Gira un total de 120 grados en sentido antihorario
 
     end_fill()
 
