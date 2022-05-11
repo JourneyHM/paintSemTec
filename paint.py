@@ -38,9 +38,9 @@ def circle(start, end):
     goto(start.x, start.y)
     down()
     begin_fill()
-    for count in range(36):
-        forward(end.x - start.x)
-        left(10)
+    for count in range(36):             # Se repite el ciclo 36 veces, generando 36 segmentos aproximandonos así a lo que es la circunferencia
+        forward(end.x - start.x)        # Marcamos la distancia que se avanza, siendo la diferencia entre los 2 puntos propuestos por el usuario
+        left(10)                        # Cada vez que termina de dibujar un segmento gira 10° a la izquierda y repite el proceso
 
     end_fill()
 
@@ -96,7 +96,8 @@ setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
 onkey(undo, 'u')
-# Implementación de los distintos colores y formas
+
+# Implementación de distintos colores 
 
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
@@ -104,6 +105,9 @@ onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 onkey(lambda: color('purple'), 'P')
+
+# Implementación de distintas formas
+
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
